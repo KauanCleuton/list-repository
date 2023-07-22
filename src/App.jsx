@@ -7,8 +7,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-content: center;
+    align-items: center;
     margin: 0 auto;
     gap: 10px;
     font-family: 'Roboto', sans-serif;
@@ -44,16 +45,24 @@ const Container = styled.div`
         background-color: #ffa600d9;
     }
     > ul {
+        width: 100%;
+        height: 300px;
+        overflow-y: auto;
         list-style: none;
-        display: grid;
-        gap: 10px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-items: center;
+        
 
         li {
-        width: fit-content;
-        height: fit-content;
+        width: 100%;
         background-color: orange;
-        padding: 12px;
+        padding: 12px 29px;
+        display: flex;
+        align-items: center;
         margin-right: 25px;
         border-radius: 8px;
         transition: .3s ease-in-out;
