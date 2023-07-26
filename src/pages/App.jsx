@@ -12,8 +12,8 @@ export function App() {
 
   const handleSearch = () => {
     if (inputValue.trim() !== '') {
-      const token = process.env.REACT_APP_GITHUB_TOKEN
-      const headers = { Authorization: `Bearer ${token}` };
+      const githubToken = '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'; // Substitua pelo seu token de acesso do GitHub
+      const headers = { Authorization: `Bearer ${githubToken}` };
 
       axios.get(`https://api.github.com/users/${inputValue}/repos`, { headers })
         .then((response) => setRepos(response.data))
