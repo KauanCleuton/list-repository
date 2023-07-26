@@ -374,7 +374,8 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "vite build"
+    "build": "vite build",
+    "dev": "vite"
   },
   "repository": {
     "type": "git",
