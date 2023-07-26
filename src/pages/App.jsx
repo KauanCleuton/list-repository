@@ -12,7 +12,7 @@ export function App() {
 
   const handleSearch = () => {
     if (inputValue.trim() !== '') {
-      const token = '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';
+      const token = process.env.REACT_APP_GITHUB_TOKEN
       const headers = { Authorization: `Bearer ${token}` };
 
       axios.get(`https://api.github.com/users/${inputValue}/repos`, { headers })
