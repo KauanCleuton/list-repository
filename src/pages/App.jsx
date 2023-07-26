@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Container } from './index'
 export function App() {
   const [inputValue, setInputValue] = useState('');
   const [repos, setRepos] = useState([]);
@@ -30,7 +30,7 @@ export function App() {
   }, [inputValue]);
 
   return (
-    <div>
+    <Container>
       <h1>Repositórios:</h1>
       <label htmlFor="search">Pesquisar</label>
       <input type="text" id="search" value={inputValue} onChange={handleChange} />
@@ -46,6 +46,6 @@ export function App() {
           <li>Nenhum repositório encontrado.</li>
         )}
       </ul>
-    </div>
+    </Container>
   );
 }
