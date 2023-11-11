@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container } from './index'
 
+
+
 export function App() {
   const [inputValue, setInputValue] = useState('');
   const [repos, setRepos] = useState([]);
@@ -12,7 +14,7 @@ export function App() {
 
   const handleSearch = () => {
     if (inputValue.trim() !== '') {
-      const githubToken = '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'; // Substitua pelo seu token de acesso do GitHub
+      const githubToken = process.env.KEY_GIT || "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"
       const headers = { Authorization: `Bearer ${githubToken}` };
 
       axios.get(`https://api.github.com/users/${inputValue}/repos`, { headers })
@@ -28,6 +30,7 @@ export function App() {
 
   useEffect(() => {
     handleSearch();
+    console.log('Variáveis de ambiente:', process.env);
   }, [inputValue]);
 
   return (
